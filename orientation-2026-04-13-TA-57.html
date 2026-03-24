@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to The Children's Guild</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Muli:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Muli','Tahoma',sans-serif;color:#002c43;background:#f0f4f8;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Poppins',sans-serif}
+a{color:#0047BB;text-decoration:none}
+
+.header{background:linear-gradient(135deg,#002c43 0%,#0047BB 50%,#1a5ec7 100%);padding:24px 20px 28px;position:relative;overflow:hidden}
+.header-inner{max-width:600px;margin:0 auto;position:relative}
+.header .c1{position:absolute;top:-40px;right:-20px;width:160px;height:160px;border-radius:50%;background:rgba(244,119,33,0.12)}
+.header .c2{position:absolute;bottom:-30px;left:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,221,79,0.08)}
+.logo{height:48px;width:auto;filter:brightness(1.1);margin-bottom:20px}
+.header h1{font-weight:800;font-size:26px;color:white;line-height:1.2;margin-bottom:6px}
+.header p{font-size:15px;color:rgba(255,255,255,0.85);margin-bottom:16px;line-height:1.5}
+.start-date{background:rgba(255,255,255,0.12);backdrop-filter:blur(10px);border-radius:10px;padding:14px 18px;border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;gap:12px}
+.start-date .icon{background:#F47721;border-radius:10px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.start-date .label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#FFDD4F;font-weight:700;margin-bottom:2px}
+.start-date .value{font-family:'Poppins',sans-serif;font-weight:700;font-size:17px;color:white}
+
+.nav{position:sticky;top:0;z-index:100;background:white;box-shadow:0 4px 12px rgba(0,40,80,0.1);padding:0 12px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.nav-inner{display:flex;max-width:600px;margin:0 auto;gap:2px}
+.nav button{padding:12px 14px;border:none;background:transparent;border-bottom:3px solid transparent;font-family:'Muli',sans-serif;font-size:12px;font-weight:600;color:#6b7280;cursor:pointer;white-space:nowrap;transition:all 0.2s}
+.nav button:hover,.nav button.active{color:#0047BB;background:#E6EDF7}
+.nav button.active{border-bottom-color:#F47721;font-weight:700}
+
+.content{max-width:600px;margin:0 auto;padding:16px 16px 100px}
+.card{background:white;border-radius:16px;box-shadow:0 4px 12px rgba(0,40,80,0.1);padding:24px;margin-bottom:16px;position:relative;overflow:hidden;animation:fadeIn 0.5s ease both}
+.card-border{position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,#0047BB 0%,#0047BB 33%,#F47721 33%,#F47721 66%,#FFDD4F 66%,#FFDD4F 100%);border-radius:16px 16px 0 0}
+.card-content{padding-top:8px}
+.section-title{font-weight:700;font-size:18px;color:#0047BB;margin-bottom:16px;display:flex;align-items:center;gap:10px;line-height:1.3}
+.section-title .icon{font-size:22px}
+
+table{width:100%;border-collapse:separate;border-spacing:0 4px;font-size:13px}
+th{padding:8px 10px;text-align:left;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;color:#0047BB;border-bottom:2px solid #0047BB}
+td{padding:10px}
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700;color:white}
+
+.loc-card{display:flex;align-items:flex-start;gap:10px;padding:12px;border-radius:10px;margin-top:8px}
+.loc-blue{background:#E6EDF7}
+.loc-orange{background:#FEF0E6}
+.loc-name-blue{font-weight:700;font-size:13px;color:#0047BB}
+.loc-name-orange{font-weight:700;font-size:13px;color:#F47721}
+.loc-addr{font-size:13px;color:#4b5563}
+
+.important{margin-top:16px;background:linear-gradient(135deg,#FEF3C7,#FDE68A);border:1px solid #F59E0B;border-radius:10px;padding:14px 16px;display:flex;gap:10px;align-items:flex-start}
+.important-text{font-weight:700;font-size:14px;color:#92400e;line-height:1.5}
+
+.dir-step{display:flex;gap:12px;align-items:flex-start;margin-bottom:10px}
+.dir-num{width:28px;height:28px;border-radius:50%;background:#0047BB;color:white;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;flex-shrink:0}
+.dir-text{font-size:14px;line-height:1.5;color:#002c43;padding-top:3px}
+
+.map-btn{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:18px;padding:14px;background:linear-gradient(135deg,#0047BB,#1a5ec7);color:white;border-radius:10px;text-decoration:none;font-weight:700;font-size:15px;box-shadow:0 4px 12px rgba(0,40,80,0.1)}
+.contact-help{margin-top:14px;padding:12px;background:#f9fafb;border-radius:10px;text-align:center;font-size:13px;color:#6b7280}
+
+.path-card{border-radius:10px;padding:18px;margin-bottom:12px}
+.path-a{background:#E6EDF7;border:1px solid #CCDBf0}
+.path-b{background:#FEF0E6;border:1px solid #FDE1CD}
+.path-label{color:white;border-radius:6px;padding:2px 10px;font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;display:inline-block}
+.path-label-a{background:#0047BB}
+.path-label-b{background:#F47721}
+.path-title-a{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:#0047BB}
+.path-title-b{font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:#F47721}
+.or-divider{display:flex;align-items:center;gap:12px;margin:12px 0}
+.or-divider .line{flex:1;height:1px;background:#d1d5db}
+.or-divider span{font-family:'Poppins',sans-serif;font-weight:700;color:#9ca3af;font-size:14px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.col-label{font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px}
+.col-blue{color:#0047BB}
+.col-orange{color:#F47721}
+
+.detail{display:flex;gap:14px;align-items:flex-start;padding:14px;background:#f9fafb;border-radius:10px;border-left:4px solid transparent;margin-bottom:12px}
+.detail-green{border-left-color:#2CB34A}
+.detail-cyan{border-left-color:#00ACCD}
+.detail-orange{border-left-color:#F47721}
+.detail-purple{border-left-color:#953192}
+.detail .d-icon{font-size:22px;flex-shrink:0}
+.detail .d-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;color:#002c43;margin-bottom:4px}
+.detail .d-text{font-size:13px;line-height:1.6;color:#4b5563}
+
+.resource-btn{display:flex;align-items:center;gap:14px;padding:16px;background:white;border:1px solid #e5e7eb;border-radius:10px;cursor:pointer;text-align:left;width:100%;margin-bottom:10px;text-decoration:none;color:inherit;transition:all 0.2s}
+.resource-btn:hover{box-shadow:0 1px 3px rgba(0,40,80,0.08);border-color:#0047BB}
+.r-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.r-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;color:#002c43;margin-bottom:2px}
+.r-desc{font-size:12px;color:#6b7280}
+.r-arrow{font-size:18px;font-weight:700}
+
+.contact-card{padding:14px;border-radius:10px;display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.cc-blue{background:#E6EDF7}
+.cc-orange{background:#FEF0E6}
+.avatar{width:44px;height:44px;border-radius:50%;color:white;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:800;font-size:16px;flex-shrink:0}
+.av-blue{background:#0047BB}
+.av-orange{background:#F47721}
+.c-name{font-weight:700;font-size:14px}
+.c-role{font-size:12px;color:#6b7280;margin-bottom:4px}
+.c-links{display:flex;gap:12px;font-size:12px;flex-wrap:wrap}
+.c-links a{color:#0047BB;font-weight:600}
+
+.footer{text-align:center;padding:20px 0;font-size:12px;color:#9ca3af}
+.footer-bar{width:40px;height:3px;border-radius:2px;background:linear-gradient(90deg,#0047BB,#F47721,#FFDD4F);margin:0 auto 12px}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<div class="header">
+  <div class="c1"></div>
+  <div class="c2"></div>
+  <div class="header-inner">
+    <h1>Welcome to the Team!</h1>
+    <p>Everything you need for your first week at The Children's Guild.</p>
+    <div class="start-date">
+      <div class="icon">📅</div>
+      <div>
+        <div class="label">Your Start Date</div>
+        <div class="value">Monday, April 13, 2026</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ NAV ═══ -->
+<div class="nav">
+  <div class="nav-inner">
+    <a href="#schedule" style="padding:12px 14px;border-bottom:3px solid #F47721;font-family:'Muli',sans-serif;font-size:12px;font-weight:700;color:#0047BB;text-decoration:none;white-space:nowrap">Schedule</a>
+    <a href="#directions" style="padding:12px 14px;border-bottom:3px solid transparent;font-family:'Muli',sans-serif;font-size:12px;font-weight:600;color:#6b7280;text-decoration:none;white-space:nowrap">Directions</a>
+    <a href="#documents" style="padding:12px 14px;border-bottom:3px solid transparent;font-family:'Muli',sans-serif;font-size:12px;font-weight:600;color:#6b7280;text-decoration:none;white-space:nowrap">Documents</a>
+    <a href="#details" style="padding:12px 14px;border-bottom:3px solid transparent;font-family:'Muli',sans-serif;font-size:12px;font-weight:600;color:#6b7280;text-decoration:none;white-space:nowrap">Day 1 Info</a>
+    <a href="#resources" style="padding:12px 14px;border-bottom:3px solid transparent;font-family:'Muli',sans-serif;font-size:12px;font-weight:600;color:#6b7280;text-decoration:none;white-space:nowrap">Resources</a>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- ═══ SCHEDULE ═══ -->
+  <div class="card" id="schedule">
+    <div class="card-border"></div>
+    <div class="card-content">
+      <h2 class="section-title"><span class="icon">📋</span>Your Week at a Glance</h2>
+      <div style="overflow-x:auto;margin:0 -8px">
+        <table>
+          <thead>
+            <tr><th>Day</th><th>Date</th><th>Location</th><th>Time</th><th>Activity</th></tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="5" style="font-weight:700;color:#F47721;font-size:14px;padding:12px 10px 6px;border-bottom:2px solid #F47721">WEEK 1 — On-the-Job Training</td></tr><tr style="background:#FEF0E6"><td style="font-weight:700">Mon</td><td>April 13</td><td style="font-size:12px">Outpatient Mental Health Services</td><td></td><td><span class="badge" style="background:#F47721">On-the-Job Training</span></td></tr><tr style="background:#FEF0E6"><td style="font-weight:700">Tue</td><td>April 14</td><td style="font-size:12px">Outpatient Mental Health Services</td><td></td><td><span class="badge" style="background:#F47721">On-the-Job Training</span></td></tr><tr style="background:#FEF0E6"><td style="font-weight:700">Wed</td><td>April 15</td><td style="font-size:12px">Outpatient Mental Health Services</td><td></td><td><span class="badge" style="background:#F47721">On-the-Job Training</span></td></tr><tr style="background:#FEF0E6"><td style="font-weight:700">Thu</td><td>April 16</td><td style="font-size:12px">Outpatient Mental Health Services</td><td></td><td><span class="badge" style="background:#F47721">On-the-Job Training</span></td></tr><tr style="background:#FEF0E6"><td style="font-weight:700">Fri</td><td>April 17</td><td style="font-size:12px">Outpatient Mental Health Services</td><td></td><td><span class="badge" style="background:#F47721">On-the-Job Training</span></td></tr><tr><td colspan="5" style="font-weight:700;color:#0047BB;font-size:14px;padding:12px 10px 6px;border-bottom:2px solid #0047BB">WEEK 2</td></tr><tr style="background:#E6EDF7"><td style="font-weight:700">Mon</td><td>April 20</td><td style="font-size:12px">Transformation Academy</td><td>9:00 AM – 4:00 PM</td><td><span class="badge" style="background:#0047BB">Orientation Day 1</span></td></tr><tr style="background:#E6EDF7"><td style="font-weight:700">Tue</td><td>April 21</td><td style="font-size:12px">Transformation Academy</td><td>9:00 AM – 4:00 PM</td><td><span class="badge" style="background:#0047BB">Orientation Day 2</span></td></tr><tr style="background:#FEF0E6"><td style="font-weight:700">Wed</td><td>April 22</td><td style="font-size:12px">Outpatient Mental Health Services</td><td></td><td><span class="badge" style="background:#F47721">On-the-Job Training</span></td></tr><tr style="background:#FEF0E6"><td style="font-weight:700">Thu</td><td>April 23</td><td style="font-size:12px">Outpatient Mental Health Services</td><td></td><td><span class="badge" style="background:#F47721">On-the-Job Training</span></td></tr><tr style="background:#FEF0E6"><td style="font-weight:700">Fri</td><td>April 24</td><td style="font-size:12px">Outpatient Mental Health Services</td><td></td><td><span class="badge" style="background:#F47721">On-the-Job Training</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Orientation Location -->
+      <div class="loc-card loc-blue" style="margin-top:16px">
+        <span style="font-size:18px;margin-top:1px">📍</span>
+        <div>
+          <div class="loc-name-blue">Transformation Academy</div>
+          <div class="loc-addr">6802 McClean Blvd, Baltimore, MD 21234</div>
+          <div style="margin-top:4px"><a href="https://childrensguildschools.org/transformation-academy" target="_blank" style="font-size:12px;color:#0047BB">https://childrensguildschools.org/transformation-academy</a></div>
+        </div>
+      </div>
+
+      <!-- Training Location (only if different) -->
+      <div class="loc-card loc-orange"><span style="font-size:18px;margin-top:1px">📍</span><div><div class="loc-name-orange">Outpatient Mental Health Services</div><div class="loc-addr">6802 McClean Blvd, Baltimore, MD 21234</div><div style="margin-top:4px"><a href="https://childrensguild.org" target="_blank" style="font-size:12px;color:#F47721">https://childrensguild.org</a></div><div style="margin-top:6px;font-size:12px;color:#4b5563"><strong>OJT Contact:</strong> Joy Zollinger, Director: 410-913-4157</div></div></div>
+
+      
+
+      <!-- Important Note -->
+      <div class="important">
+        <span style="font-size:20px">⚠️</span>
+        <div class="important-text">Please arrive by 8:50 AM on your first day. Bring your required documents (see Documents section below).</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card"><div class="card-border"></div><div class="card-content"><h2 class="section-title"><span class="icon">🏢</span>About Your First Two Weeks</h2><div class="detail detail-cyan"><span class="d-icon">👥</span><div><div class="d-title">Week 1: Job Training at Your Program Site</div><p class="d-text">Your first week is spent at your actual work location. You will get to know your team, your space, and your day-to-day role. Your team leader will guide you through your first days. Dress code and hours follow your specific program site.</p></div></div><div class="detail detail-orange"><span class="d-icon">🏫</span><div><div class="d-title">Week 2: Classroom Orientation</div><p class="d-text">Your second week is classroom orientation at the Transformation Academy with all new team members starting that cycle. You will learn about the TCG mission, policies, and benefits and meet colleagues from across the organization.</p></div></div><div class="detail detail-purple"><span class="d-icon">❓</span><div><div class="d-title">Questions Before You Start?</div><p class="d-text">Reach out to your hiring manager or contact Elizabeth Garcia at garciae@childrensguild.org or 443-829-6155. We want you to feel fully prepared!</p></div></div></div></div>
+
+  <!-- ═══ DIRECTIONS ═══ -->
+  <div class="card" id="directions">
+    <div class="card-border"></div>
+    <div class="card-content">
+      <h2 class="section-title"><span class="icon">🧭</span>Finding Your Way</h2>
+      <div style="font-weight:600;font-size:14px;color:#0047BB;margin-bottom:14px">
+        Directions to Transformation Academy
+      </div>
+
+      <div class='dir-step'><span class='step-num'>1</span><div>Park in front of St. Thomas More Church.</div></div><div class='dir-step'><span class='step-num'>2</span><div>Walk left along the sidewalk.</div></div><div class='dir-step'><span class='step-num'>3</span><div>Find the bright <strong>RED doors</strong>. Use the RED DOOR side entrance. <strong>Do NOT enter via the Main School Entrance.</strong></div></div><div class='dir-step'><span class='step-num'>4</span><div>If the door is not open, contact Elizabeth Garcia: 443-829-6155.</div></div><div class='dir-step'><span class='step-num'>5</span><div>Turn left into the Board Room.</div></div>
+
+      <a href="https://maps.google.com/?q=6802+McClean+Blvd+Baltimore+MD+21234" target="_blank" class="map-btn">🗺️ Open in Maps</a>
+
+      <div class="contact-help">
+        Need help finding us? Call <a href="tel:443-829-6155"><strong>Elizabeth Garcia: 443-829-6155</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ DOCUMENTS ═══ -->
+  <div class="card" id="documents">
+    <div class="card-border"></div>
+    <div class="card-content">
+      <h2 class="section-title"><span class="icon">📄</span>Required Documents for Day 1</h2>
+      <div style="margin-bottom:16px;background:#FEF3C7;border:1px solid #F59E0B;border-radius:10px;padding:14px 16px;display:flex;gap:10px"><span style="font-size:20px">⚠️</span><div style="font-weight:700;font-size:14px;color:#92400e;line-height:1.5"><strong>Your first day of employment is Day 1 at your job training site</strong> &#8212; the Monday before orientation week. Federal law requires I-9 verification within 3 business days. Bring your original documents on that first day.</div></div>
+      <p style="font-size:14px;line-height:1.6;margin-bottom:16px;color:#4b5563">
+        Bring <strong>ORIGINAL</strong> documents (not copies). Human Resources will verify them on your first day.
+      </p>
+
+      <div class="path-card path-a">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+          <span class="path-label path-label-a">A</span>
+          <span class="path-title-a">One Document</span>
+        </div>
+        <p style="font-size:13px;color:#6b7280;margin-bottom:10px">Bring ANY ONE of these:</p>
+        <div style="display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid rgba(0,71,187,0.1);font-size:14px"><span style="color:#0047BB">✓</span> U.S. Passport (book or card)</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid rgba(0,71,187,0.1);font-size:14px"><span style="color:#0047BB">✓</span> Green Card (Permanent Resident Card)</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:8px 0;font-size:14px"><span style="color:#0047BB">✓</span> Work Permit (EAD Card)</div>
+      </div>
+
+      <div class="or-divider"><div class="line"></div><span>OR</span><div class="line"></div></div>
+
+      <div class="path-card path-b">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+          <span class="path-label path-label-b">B</span>
+          <span class="path-title-b">Two Documents</span>
+        </div>
+        <p style="font-size:13px;color:#6b7280;margin-bottom:10px">Bring ONE from EACH column:</p>
+        <div class="two-col">
+          <div>
+            <div class="col-label col-blue">📸 Photo ID</div>
+            <div style="font-size:13px;padding:4px 0;border-bottom:1px solid rgba(244,119,33,0.15)">• Driver's License</div>
+            <div style="font-size:13px;padding:4px 0;border-bottom:1px solid rgba(244,119,33,0.15)">• State ID Card</div>
+            <div style="font-size:13px;padding:4px 0">• School ID (with photo)</div>
+          </div>
+          <div>
+            <div class="col-label col-orange">📋 Work Proof</div>
+            <div style="font-size:13px;padding:4px 0;border-bottom:1px solid rgba(244,119,33,0.15)">• Social Security Card</div>
+            <div style="font-size:13px;padding:4px 0">• Birth Certificate (with seal)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ DAY 1 DETAILS ═══ -->
+  <div class="card" id="details">
+    <div class="card-border"></div>
+    <div class="card-content">
+      <h2 class="section-title"><span class="icon">☀️</span>Orientation Day 1 Details</h2>
+
+      <div class="detail detail-green">
+        <span class="d-icon">🍽️</span>
+        <div><div class="d-title">Food</div><p class="d-text">We provide breakfast and lunch on your first day. Bring your own if you prefer. We have a refrigerator and microwave available.</p></div>
+      </div>
+      <div class="detail detail-cyan">
+        <span class="d-icon">🧥</span>
+        <div><div class="d-title">Clothing</div><p class="d-text">Rooms can be cool. Bring layers or a jacket!</p></div>
+      </div>
+      <div class="detail detail-orange">
+        <span class="d-icon">⏰</span>
+        <div><div class="d-title">Timing</div><p class="d-text">Please arrive by 8:50 AM to check in and get settled.</p></div>
+      </div>
+      <div class="detail detail-purple">
+        <span class="d-icon">❄️</span>
+        <div><div class="d-title">Weather Delays</div><p class="d-text">Your location follows Baltimore County Public Schools weather delays and closings. We will also send you a text when we know if there is a delay or closing.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ RESOURCES ═══ -->
+  <div class="card" id="resources">
+    <div class="card-border"></div>
+    <div class="card-content">
+      <h2 class="section-title"><span class="icon">📚</span>Resources &amp; Training</h2>
+      <p style="font-size:14px;line-height:1.6;margin-bottom:16px;color:#4b5563">
+        These resources will help you get familiar with The Children's Guild before your first day.
+      </p>
+
+      <div class="resource-btn" style="cursor:default">
+        <div class="r-icon" style="background:#0047BB15">📖</div>
+        <div style="flex:1"><div class="r-title">Employee Reference Guide</div><div class="r-desc">Available after your first day when you receive your login credentials</div></div>
+      </div>
+      <div class="resource-btn" style="cursor:default">
+        <div class="r-icon" style="background:#2CB34A15">📋</div>
+        <div style="flex:1"><div class="r-title">Key Policies</div><div class="r-desc">Available after your first day when you receive your login credentials</div></div>
+      </div>
+      <div class="resource-btn" style="cursor:default">
+        <div class="r-icon" style="background:#95319215">🎓</div>
+        <div style="flex:1"><div class="r-title">Pre-Orientation Training</div><div class="r-desc">Available after your first day when you receive your login credentials</div></div>
+      </div>
+      <a href="https://childrensguild.org/about" target="_blank" class="resource-btn">
+        <div class="r-icon" style="background:#F4772115">🦋</div>
+        <div style="flex:1"><div class="r-title">About The Children's Guild</div><div class="r-desc">Learn about our mission and values</div></div>
+        <div class="r-arrow" style="color:#F47721">→</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ═══ CONTACTS ═══ -->
+  <div class="card">
+    <div class="card-border"></div>
+    <div class="card-content" style="text-align:center;padding:8px 0">
+      <div style="font-family:'Poppins',sans-serif;font-weight:800;font-size:18px;color:#F47721;margin-bottom:4px">
+        We're excited to welcome you!
+      </div>
+      <p style="font-size:14px;color:#6b7280;margin-bottom:20px">Questions? We're here to help.</p>
+
+      <div class="contact-card cc-blue">
+        <div class="avatar av-blue">EG</div>
+        <div style="flex:1;text-align:left">
+          <div class="c-name">Elizabeth Garcia</div>
+          <div class="c-role">Chief Learning Officer</div>
+          <div class="c-links">
+            <a href="mailto:garciae@childrensguild.org">📧 Email</a>
+            <a href="tel:443-829-6155">📞 443-829-6155</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ FOOTER ═══ -->
+  <div class="footer">
+    <div class="footer-bar"></div>
+    © 2026 The Children's Guild • Orientation Portal
+  </div>
+
+</div>
+
+
+</body>
+</html>
