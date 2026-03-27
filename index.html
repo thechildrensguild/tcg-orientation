@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to The Children's Guild | New Hire Orientation</title>
+  <meta name="description" content="Everything you need to know before your first day at The Children's Guild.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Muli:wght@400;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ========================================
+       RESET & BASE
+       ======================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #0047BB;
+      --blue-light: #e8eefb;
+      --orange: #F47721;
+      --yellow: #FFDD4F;
+      --cyan: #00ACCD;
+      --green: #2CB34A;
+      --pink: #EE3780;
+      --purple: #953192;
+      --red-orange: #EF462A;
+      --text: #222;
+      --text-light: #555;
+      --bg: #fafbfd;
+      --white: #fff;
+      --radius: 12px;
+      --shadow: 0 2px 12px rgba(0,0,0,.08);
+      --shadow-lg: 0 4px 24px rgba(0,0,0,.10);
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+    body {
+      font-family: 'Muli', 'Segoe UI', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; line-height: 1.25; }
+
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    img { max-width: 100%; display: block; }
+
+    /* ========================================
+       NAV
+       ======================================== */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      box-shadow: 0 1px 6px rgba(0,0,0,.08);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 16px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .nav-inner::-webkit-scrollbar { display: none; }
+
+    .nav-brand {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: .95rem;
+      color: var(--blue);
+      white-space: nowrap;
+      padding: 14px 0;
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+
+    .nav-link {
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--text-light);
+      white-space: nowrap;
+      padding: 14px 10px;
+      border-bottom: 3px solid transparent;
+      transition: color .2s, border-color .2s;
+      flex-shrink: 0;
+    }
+
+    .nav-link:hover {
+      color: var(--blue);
+      border-bottom-color: var(--blue);
+      text-decoration: none;
+    }
+
+    /* ========================================
+       HERO
+       ======================================== */
+    .hero {
+      background: linear-gradient(135deg, var(--blue) 0%, #003399 50%, #002277 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 60px 20px 56px;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      opacity: .92;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: .82rem;
+      padding: 6px 18px;
+      border-radius: 50px;
+      margin-bottom: 18px;
+      letter-spacing: .02em;
+    }
+
+    /* color bar below hero */
+    .color-bar {
+      display: flex;
+      height: 5px;
+    }
+    .color-bar span { flex: 1; }
+
+    /* ========================================
+       SECTIONS
+       ======================================== */
+    .section {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 48px 20px;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      color: var(--text-light);
+      margin-bottom: 28px;
+      font-size: .98rem;
+    }
+
+    /* ========================================
+       ABOUT
+       ======================================== */
+    .about-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      box-shadow: var(--shadow);
+      font-size: 1.02rem;
+      line-height: 1.75;
+      border-left: 5px solid var(--blue);
+    }
+
+    .about-card strong { color: var(--blue); }
+
+    /* ========================================
+       TRACKS (First Two Weeks)
+       ======================================== */
+    .tracks { display: flex; flex-direction: column; gap: 20px; }
+
+    .track-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 24px;
+      border-top: 4px solid var(--blue);
+    }
+
+    .track-card.alt { border-top-color: var(--cyan); }
+
+    .track-label {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--blue);
+      margin-bottom: 4px;
+    }
+
+    .track-card.alt .track-label { color: var(--cyan); }
+
+    .track-card h3 { font-size: 1.15rem; margin-bottom: 10px; }
+
+    .track-card p { color: var(--text-light); font-size: .95rem; }
+
+    .track-note {
+      background: var(--blue-light);
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-size: .92rem;
+      margin-top: 4px;
+      color: var(--text);
+    }
+
+    .track-note strong { color: var(--blue); }
+
+    /* ========================================
+       CHECKLIST (What to Bring)
+       ======================================== */
+    .checklist { list-style: none; }
+
+    .checklist li {
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      padding: 18px 22px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: .95rem;
+    }
+
+    .checklist .icon {
+      flex-shrink: 0;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .checklist li strong { display: block; margin-bottom: 2px; }
+
+    .checklist .detail { color: var(--text-light); font-size: .88rem; }
+
+    /* ========================================
+       ORIENTATION DAY
+       ======================================== */
+    .timeline { list-style: none; }
+
+    .timeline li {
+      position: relative;
+      padding: 0 0 28px 42px;
+    }
+
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: 14px;
+      top: 8px;
+      bottom: 0;
+      width: 2px;
+      background: #dde4ee;
+    }
+
+    .timeline li:last-child::before { display: none; }
+
+    .timeline li::after {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 5px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--blue);
+      border: 3px solid var(--blue-light);
+    }
+
+    .timeline li h4 {
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .timeline li p {
+      color: var(--text-light);
+      font-size: .92rem;
+    }
+
+    /* ========================================
+       FAQ
+       ======================================== */
+    .faq-list { display: flex; flex-direction: column; gap: 14px; }
+
+    .faq-item {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px 24px;
+    }
+
+    .faq-q {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: .98rem;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .faq-a {
+      font-size: .93rem;
+      color: var(--text-light);
+      line-height: 1.65;
+    }
+
+    .faq-a a { font-weight: 600; }
+
+    /* ========================================
+       LOCATIONS
+       ======================================== */
+    .locations-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .loc-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .loc-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      background: var(--blue-light);
+    }
+
+    .loc-card h4 {
+      font-size: .98rem;
+      margin-bottom: 3px;
+    }
+
+    .loc-addr {
+      font-size: .87rem;
+      color: var(--text-light);
+      margin-bottom: 6px;
+    }
+
+    .maps-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--blue);
+    }
+
+    .maps-link:hover { text-decoration: underline; }
+
+    /* ========================================
+       CONTACT
+       ======================================== */
+    .contact-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      padding: 36px 28px;
+      text-align: center;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .contact-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin: 0 auto 16px;
+    }
+
+    .contact-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 2px;
+    }
+
+    .contact-role {
+      font-size: .9rem;
+      color: var(--text-light);
+      margin-bottom: 18px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: .92rem;
+      transition: opacity .2s;
+    }
+
+    .contact-btn:hover { opacity: .88; text-decoration: none; }
+
+    .contact-btn.phone {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .contact-btn.email {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    /* ========================================
+       FOOTER
+       ======================================== */
+    .footer {
+      text-align: center;
+      padding: 36px 20px 24px;
+      color: var(--text-light);
+      font-size: .88rem;
+    }
+
+    .footer strong {
+      display: block;
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      font-size: .95rem;
+      margin-bottom: 4px;
+    }
+
+    .footer-bar {
+      display: flex;
+      height: 5px;
+      margin-top: 28px;
+    }
+
+    .footer-bar span { flex: 1; }
+
+    /* ========================================
+       RESPONSIVE
+       ======================================== */
+    @media (min-width: 600px) {
+      .hero { padding: 80px 28px 72px; }
+      .hero h1 { font-size: 2.6rem; }
+      .hero p { font-size: 1.2rem; }
+      .section { padding: 56px 28px; }
+      .section-title { font-size: 1.65rem; }
+      .locations-grid { grid-template-columns: 1fr 1fr; }
+      .contact-links { flex-direction: row; justify-content: center; }
+    }
+
+    @media (min-width: 900px) {
+      .hero h1 { font-size: 2.9rem; }
+      .tracks { flex-direction: row; }
+      .tracks > * { flex: 1; }
+      .section { padding: 64px 28px; }
+    }
+
+    /* Divider between sections */
+    .divider {
+      max-width: 820px;
+      margin: 0 auto;
+      border: none;
+      border-top: 1px solid #e8eaee;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======== NAV ======== -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <span class="nav-brand">TCG</span>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#first-two-weeks" class="nav-link">First Two Weeks</a>
+      <a href="#what-to-bring" class="nav-link">What to Bring</a>
+      <a href="#orientation-day" class="nav-link">Orientation Day</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="#locations" class="nav-link">Locations</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ======== HERO ======== -->
+  <header class="hero">
+    <div class="hero-badge">New Hire Orientation</div>
+    <h1>Welcome to The Children's Guild</h1>
+    <p>Everything you need to know before your first day</p>
+  </header>
+  <div class="color-bar">
+    <span style="background:#0047BB"></span>
+    <span style="background:#F47721"></span>
+    <span style="background:#FFDD4F"></span>
+    <span style="background:#00ACCD"></span>
+    <span style="background:#2CB34A"></span>
+    <span style="background:#953192"></span>
+    <span style="background:#EE3780"></span>
+    <span style="background:#EF462A"></span>
+  </div>
+
+  <!-- ======== ABOUT ======== -->
+  <section class="section" id="about">
+    <h2 class="section-title">About The Children's Guild</h2>
+    <p class="section-subtitle">Who we are and what we do</p>
+    <div class="about-card">
+      <strong>The Children's Guild</strong> is a nonprofit organization that transforms the lives of children, families, and communities through education and care. With <strong>500+ team members</strong> across Maryland and Washington, DC, we operate schools, mental health programs, therapeutic foster care, and community services.
+      <br><br>
+      We're glad you're joining us!
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ======== FIRST TWO WEEKS ======== -->
+  <section class="section" id="first-two-weeks">
+    <h2 class="section-title">Your First Two Weeks</h2>
+    <p class="section-subtitle">There are two tracks depending on your start date. Here's what to expect.</p>
+    <div class="tracks">
+      <div class="track-card">
+        <div class="track-label">Most Common</div>
+        <h3>OJT-First Track</h3>
+        <p>Your first week is on-the-job training at your program site. Your second week starts with two days of orientation at a central location, then you return to your site.</p>
+      </div>
+      <div class="track-card alt">
+        <div class="track-label">Alternate</div>
+        <h3>Orientation-First Track</h3>
+        <p>Your first week starts with two days of orientation at a central location, then you report to your program site.</p>
+      </div>
+    </div>
+    <div class="track-note" style="margin-top:20px">
+      <strong>Your personal portal</strong> (sent to your work email) has your exact schedule, dates, and directions. This page covers the general information that applies to everyone.
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ======== WHAT TO BRING ======== -->
+  <section class="section" id="what-to-bring">
+    <h2 class="section-title">What to Bring</h2>
+    <p class="section-subtitle">Make sure you have these items ready for orientation day.</p>
+    <ul class="checklist">
+      <li>
+        <div class="icon" style="background:#FFF3E0;">&#128196;</div>
+        <div>
+          <strong>Original I-9 Documents</strong>
+          <span class="detail"><strong>Option A:</strong> One document from List A (e.g., valid U.S. passport or passport card, permanent resident card).<br><strong>Option B:</strong> One from List B (e.g., driver's license or state ID) <em>and</em> one from List C (e.g., Social Security card or birth certificate).<br>Documents must be originals, not copies.</span>
+        </div>
+      </li>
+      <li>
+        <div class="icon" style="background:#E3F2FD;">&#129703;</div>
+        <div>
+          <strong>Photo ID</strong>
+          <span class="detail">A government-issued photo ID such as a driver's license or passport.</span>
+        </div>
+      </li>
+      <li>
+        <div class="icon" style="background:#FFF8E1;">&#9997;&#65039;</div>
+        <div>
+          <strong>Something to Take Notes With</strong>
+          <span class="detail">A notebook and pen, or your phone/tablet if you prefer digital notes.</span>
+        </div>
+      </li>
+      <li>
+        <div class="icon" style="background:#E8F5E9;">&#129507;</div>
+        <div>
+          <strong>Layers or a Jacket</strong>
+          <span class="detail">Meeting rooms can be cool. Dress in layers so you stay comfortable.</span>
+        </div>
+      </li>
+      <li>
+        <div class="icon" style="background:#E0F7FA;">&#128241;</div>
+        <div>
+          <strong>Your Phone</strong>
+          <span class="detail">You'll need it to access your personal portal and for some setup steps.</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ======== ORIENTATION DAY ======== -->
+  <section class="section" id="orientation-day">
+    <h2 class="section-title">What to Expect on Orientation Day</h2>
+    <p class="section-subtitle">Here's a look at how your day will flow.</p>
+    <ul class="timeline">
+      <li>
+        <h4>Arrive by 8:50 AM</h4>
+        <p>Check in at the front desk. We'll show you where to go.</p>
+      </li>
+      <li>
+        <h4>Breakfast and Lunch Provided</h4>
+        <p>We'll have breakfast ready when you arrive and lunch will be provided on Day 1.</p>
+      </li>
+      <li>
+        <h4>Meet the Leadership Team</h4>
+        <p>You'll hear from leaders across the organization and learn about TCG's mission, values, and culture.</p>
+      </li>
+      <li>
+        <h4>I-9 Document Verification</h4>
+        <p>HR will verify your original I-9 documents. Be sure to bring them with you.</p>
+      </li>
+      <li>
+        <h4>Get Your Employee Badge</h4>
+        <p>We'll take your photo and issue your ID badge during orientation.</p>
+      </li>
+      <li>
+        <h4>Topics Covered</h4>
+        <p>Benefits overview, policies and procedures, safety training, and The Children's Guild culture.</p>
+      </li>
+    </ul>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ======== FAQ ======== -->
+  <section class="section" id="faq">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-subtitle">Quick answers to the most common questions.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">What should I wear?</div>
+        <div class="faq-a">Business casual. Comfortable shoes are recommended since you'll be moving between rooms throughout the day.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if there's bad weather?</div>
+        <div class="faq-a">Follow your local school district's delays and closings. We will text you if there's a change to the orientation schedule.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I bring my own lunch?</div>
+        <div class="faq-a">Yes! A refrigerator and microwave are available. Lunch is also provided on Day 1.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">When will I get my work email?</div>
+        <div class="faq-a">Typically within your first week. You'll receive a separate email with your credentials.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if I'm running late?</div>
+        <div class="faq-a">Call Elizabeth Garcia at <a href="tel:+14438296155">443-829-6155</a> to let us know.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ======== LOCATIONS ======== -->
+  <section class="section" id="locations">
+    <h2 class="section-title">Our Locations</h2>
+    <p class="section-subtitle">The Children's Guild operates across Maryland and Washington, DC.</p>
+    <div class="locations-grid">
+
+      <div class="loc-card">
+        <div class="loc-icon">&#127979;</div>
+        <div>
+          <h4>Transformation Academy (TA)</h4>
+          <div class="loc-addr">6802 McClean Blvd, Baltimore, MD 21234</div>
+          <a class="maps-link" href="https://maps.google.com/?q=6802+McClean+Blvd,+Baltimore,+MD+21234" target="_blank" rel="noopener">&#x2794; Open in Maps</a>
+        </div>
+      </div>
+
+      <div class="loc-card">
+        <div class="loc-icon">&#127979;</div>
+        <div>
+          <h4>TCG DC Charter School</h4>
+          <div class="loc-addr">2146 24th St. NE, Washington, DC 20018</div>
+          <a class="maps-link" href="https://maps.google.com/?q=2146+24th+St+NE,+Washington,+DC+20018" target="_blank" rel="noopener">&#x2794; Open in Maps</a>
+        </div>
+      </div>
+
+      <div class="loc-card">
+        <div class="loc-icon">&#127979;</div>
+        <div>
+          <h4>TCG School of Prince George's County</h4>
+          <div class="loc-addr">5702 Sargent Rd, Chillum, MD 20782</div>
+          <a class="maps-link" href="https://maps.google.com/?q=5702+Sargent+Rd,+Chillum,+MD+20782" target="_blank" rel="noopener">&#x2794; Open in Maps</a>
+        </div>
+      </div>
+
+      <div class="loc-card">
+        <div class="loc-icon">&#127979;</div>
+        <div>
+          <h4>TCG School of Baltimore</h4>
+          <div class="loc-addr">410 E. Jeffrey St, Baltimore, MD 21225</div>
+          <a class="maps-link" href="https://maps.google.com/?q=410+E+Jeffrey+St,+Baltimore,+MD+21225" target="_blank" rel="noopener">&#x2794; Open in Maps</a>
+        </div>
+      </div>
+
+      <div class="loc-card">
+        <div class="loc-icon">&#127979;</div>
+        <div>
+          <h4>Monarch Preschool College Park</h4>
+          <div class="loc-addr">9506 50th Ave, College Park, MD 20740</div>
+          <a class="maps-link" href="https://maps.google.com/?q=9506+50th+Ave,+College+Park,+MD+20740" target="_blank" rel="noopener">&#x2794; Open in Maps</a>
+        </div>
+      </div>
+
+      <div class="loc-card">
+        <div class="loc-icon">&#127979;</div>
+        <div>
+          <h4>Monarch Academy Annapolis</h4>
+          <div class="loc-addr">2000 Capital Drive, Annapolis, MD 21401</div>
+          <a class="maps-link" href="https://maps.google.com/?q=2000+Capital+Drive,+Annapolis,+MD+21401" target="_blank" rel="noopener">&#x2794; Open in Maps</a>
+        </div>
+      </div>
+
+      <div class="loc-card">
+        <div class="loc-icon">&#127979;</div>
+        <div>
+          <h4>Monarch Academy Glen Burnie</h4>
+          <div class="loc-addr">6730 Baymeadow Dr, Glen Burnie, MD 21060</div>
+          <a class="maps-link" href="https://maps.google.com/?q=6730+Baymeadow+Dr,+Glen+Burnie,+MD+21060" target="_blank" rel="noopener">&#x2794; Open in Maps</a>
+        </div>
+      </div>
+
+      <div class="loc-card">
+        <div class="loc-icon">&#127979;</div>
+        <div>
+          <h4>Monarch Global Academy</h4>
+          <div class="loc-addr">430 Brock Bridge Rd, Laurel, MD 20724</div>
+          <a class="maps-link" href="https://maps.google.com/?q=430+Brock+Bridge+Rd,+Laurel,+MD+20724" target="_blank" rel="noopener">&#x2794; Open in Maps</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ======== CONTACT ======== -->
+  <section class="section" id="contact">
+    <h2 class="section-title" style="text-align:center;">Questions? We're Here to Help.</h2>
+    <p class="section-subtitle" style="text-align:center;">Reach out anytime before or during your first week.</p>
+    <div class="contact-card">
+      <div class="contact-avatar">EG</div>
+      <h3>Elizabeth Garcia</h3>
+      <div class="contact-role">Chief Learning Officer</div>
+      <div class="contact-links">
+        <a href="tel:+14438296155" class="contact-btn phone">&#128222; 443-829-6155</a>
+        <a href="mailto:garciae@childrensguild.org" class="contact-btn email">&#9993; garciae@childrensguild.org</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FOOTER ======== -->
+  <footer class="footer">
+    <strong>The Children's Guild</strong>
+    Transforming Lives Through Education and Care
+    <div class="footer-bar">
+      <span style="background:#0047BB"></span>
+      <span style="background:#F47721"></span>
+      <span style="background:#FFDD4F"></span>
+      <span style="background:#00ACCD"></span>
+      <span style="background:#2CB34A"></span>
+      <span style="background:#953192"></span>
+      <span style="background:#EE3780"></span>
+      <span style="background:#EF462A"></span>
+    </div>
+  </footer>
+
+</body>
+</html>
