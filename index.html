@@ -258,7 +258,200 @@
     .checklist .detail { color: var(--text-light); font-size: .88rem; }
 
     /* ========================================
-       ORIENTATION DAY
+       I-9 DOCUMENT PATHS
+       ======================================== */
+    .i9-intro {
+      font-size: .95rem;
+      line-height: 1.65;
+      margin-bottom: 20px;
+      color: var(--text-light);
+    }
+
+    .i9-intro strong { color: var(--text); }
+
+    .path-card {
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      margin-bottom: 0;
+    }
+
+    .path-a {
+      background: #E6EDF7;
+      border: 1px solid #CCDBF0;
+    }
+
+    .path-b {
+      background: #FEF0E6;
+      border: 1px solid #FDE1CD;
+    }
+
+    .path-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .path-label {
+      color: var(--white);
+      border-radius: 6px;
+      padding: 3px 12px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: .88rem;
+      display: inline-block;
+    }
+
+    .path-label-a { background: var(--blue); }
+    .path-label-b { background: var(--orange); }
+
+    .path-title-a {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--blue);
+    }
+
+    .path-title-b {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--orange);
+    }
+
+    .path-hint {
+      font-size: .88rem;
+      color: var(--text-light);
+      margin-bottom: 10px;
+    }
+
+    .path-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+      font-size: .93rem;
+    }
+
+    .path-item + .path-item {
+      border-top: 1px solid rgba(0,71,187,.1);
+    }
+
+    .path-b .path-item + .path-item {
+      border-top-color: rgba(244,119,33,.15);
+    }
+
+    .path-check-blue { color: var(--blue); font-weight: 700; }
+    .path-check-orange { color: var(--orange); font-weight: 700; }
+
+    .or-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .or-divider .line {
+      flex: 1;
+      height: 1px;
+      background: #d1d5db;
+    }
+
+    .or-divider span {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      color: #9ca3af;
+      font-size: .92rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .col-label {
+      font-weight: 700;
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      margin-bottom: 8px;
+    }
+
+    .col-blue { color: var(--blue); }
+    .col-orange { color: var(--orange); }
+
+    .col-item {
+      font-size: .9rem;
+      padding: 5px 0;
+      color: var(--text);
+    }
+
+    .col-item + .col-item {
+      border-top: 1px solid rgba(244,119,33,.12);
+    }
+
+    .i9-note {
+      margin-top: 16px;
+      background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+      border: 1px solid #F59E0B;
+      border-radius: 8px;
+      padding: 14px 18px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: .9rem;
+      font-weight: 600;
+      color: #92400e;
+      line-height: 1.55;
+    }
+
+    /* ========================================
+       ORIENTATION DAY DETAIL CARDS
+       ======================================== */
+    .detail-cards { display: flex; flex-direction: column; gap: 12px; }
+
+    .detail-card {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 18px 20px;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border-left: 4px solid transparent;
+    }
+
+    .detail-card.green { border-left-color: var(--green); }
+    .detail-card.cyan { border-left-color: var(--cyan); }
+    .detail-card.orange { border-left-color: var(--orange); }
+    .detail-card.purple { border-left-color: var(--purple); }
+    .detail-card.blue { border-left-color: var(--blue); }
+    .detail-card.pink { border-left-color: var(--pink); }
+
+    .detail-card .d-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      line-height: 1;
+      padding-top: 2px;
+    }
+
+    .detail-card .d-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: .95rem;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .detail-card .d-text {
+      font-size: .9rem;
+      line-height: 1.6;
+      color: var(--text-light);
+    }
+
+    /* ========================================
+       TIMELINE
        ======================================== */
     .timeline { list-style: none; }
 
@@ -383,6 +576,58 @@
     .maps-link:hover { text-decoration: underline; }
 
     /* ========================================
+       RESOURCES
+       ======================================== */
+    .resource-list { display: flex; flex-direction: column; gap: 10px; }
+
+    .resource-item {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .resource-item .r-icon {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      background: var(--blue-light);
+    }
+
+    .resource-item .r-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: .93rem;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .resource-item .r-desc {
+      font-size: .85rem;
+      color: var(--text-light);
+    }
+
+    .resource-note {
+      margin-top: 16px;
+      background: var(--blue-light);
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-size: .92rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .resource-note strong { color: var(--blue); }
+
+    /* ========================================
        CONTACT
        ======================================== */
     .contact-card {
@@ -498,6 +743,10 @@
       .section { padding: 64px 28px; }
     }
 
+    @media (max-width: 480px) {
+      .two-col { grid-template-columns: 1fr; gap: 12px; }
+    }
+
     /* Divider between sections */
     .divider {
       max-width: 820px;
@@ -519,6 +768,7 @@
       <a href="#orientation-day" class="nav-link">Orientation Day</a>
       <a href="#faq" class="nav-link">FAQ</a>
       <a href="#locations" class="nav-link">Locations</a>
+      <a href="#resources" class="nav-link">Resources</a>
       <a href="#contact" class="nav-link">Contact</a>
     </div>
   </nav>
@@ -545,7 +795,9 @@
     <h2 class="section-title">About The Children's Guild</h2>
     <p class="section-subtitle">Who we are and what we do</p>
     <div class="about-card">
-      <strong>The Children's Guild</strong> is a nonprofit organization that transforms the lives of children, families, and communities through education and care. With <strong>500+ team members</strong> across Maryland and Washington, DC, we operate schools, mental health programs, therapeutic foster care, and community services.
+      Founded in 1953, <strong>The Children's Guild</strong> serves children, families, and communities through a network of schools, mental health programs, therapeutic foster care, and community-based services across Maryland and Washington, DC. Our approach is guided by our unique <strong>Transformation Education</strong> philosophy &mdash; the belief that every child can learn and succeed when given the right environment and support.
+      <br><br>
+      With <strong>500+ team members</strong> working across multiple campuses and programs, we are one of Maryland's most established nonprofits dedicated to transforming lives through education and care.
       <br><br>
       We're glad you're joining us!
     </div>
@@ -559,18 +811,20 @@
     <p class="section-subtitle">There are two tracks depending on your start date. Here's what to expect.</p>
     <div class="tracks">
       <div class="track-card">
-        <div class="track-label">Most Common</div>
-        <h3>OJT-First Track</h3>
-        <p>Your first week is on-the-job training at your program site. Your second week starts with two days of orientation at a central location, then you return to your site.</p>
+        <div class="track-label">OJT-First Track</div>
+        <h3>Week 1 at Your Site, Week 2 Orientation</h3>
+        <p><strong>Week 1:</strong> You report to your program site Monday through Friday for on-the-job training. Your site contact will have your schedule and help you get settled.</p>
+        <p style="margin-top:8px"><strong>Week 2:</strong> Monday and Tuesday are orientation at a central location. Wednesday through Friday, you return to your program site.</p>
       </div>
       <div class="track-card alt">
-        <div class="track-label">Alternate</div>
-        <h3>Orientation-First Track</h3>
-        <p>Your first week starts with two days of orientation at a central location, then you report to your program site.</p>
+        <div class="track-label">Orientation-First Track</div>
+        <h3>Week 1 Orientation, Then Your Site</h3>
+        <p><strong>Week 1:</strong> Monday and Tuesday are orientation at a central location. Wednesday through Friday, you report to your program site.</p>
+        <p style="margin-top:8px"><strong>Week 2:</strong> You're at your program site all week, continuing on-the-job training.</p>
       </div>
     </div>
     <div class="track-note" style="margin-top:20px">
-      <strong>Your personal portal</strong> (sent to your work email) has your exact schedule, dates, and directions. This page covers the general information that applies to everyone.
+      <strong>Check your personal portal</strong> (sent to your email) for your exact schedule and dates. This page covers the general information that applies to everyone.
     </div>
   </section>
 
@@ -580,21 +834,63 @@
   <section class="section" id="what-to-bring">
     <h2 class="section-title">What to Bring</h2>
     <p class="section-subtitle">Make sure you have these items ready for orientation day.</p>
-    <ul class="checklist">
-      <li>
-        <div class="icon" style="background:#FFF3E0;">&#128196;</div>
+
+    <!-- I-9 Documents: Option A / OR / Option B -->
+    <p class="i9-intro">
+      We need to verify you can work in the United States. Bring <strong>ORIGINAL</strong> documents (not copies or photos). Human Resources will check in with you during your first day.
+    </p>
+
+    <div class="path-card path-a">
+      <div class="path-header">
+        <span class="path-label path-label-a">A</span>
+        <span class="path-title-a">One Document from List A</span>
+      </div>
+      <div class="path-hint">Bring ANY ONE of these:</div>
+      <div class="path-item">
+        <span class="path-check-blue">&#10003;</span> U.S. Passport (book or card)
+      </div>
+      <div class="path-item">
+        <span class="path-check-blue">&#10003;</span> Green Card (Permanent Resident Card)
+      </div>
+      <div class="path-item">
+        <span class="path-check-blue">&#10003;</span> Work Permit (EAD Card)
+      </div>
+    </div>
+
+    <div class="or-divider">
+      <div class="line"></div>
+      <span>OR</span>
+      <div class="line"></div>
+    </div>
+
+    <div class="path-card path-b">
+      <div class="path-header">
+        <span class="path-label path-label-b">B</span>
+        <span class="path-title-b">Two Documents (one from each column)</span>
+      </div>
+      <div class="path-hint">Bring ONE from EACH column:</div>
+      <div class="two-col">
         <div>
-          <strong>Original I-9 Documents</strong>
-          <span class="detail"><strong>Option A:</strong> One document from List A (e.g., valid U.S. passport or passport card, permanent resident card).<br><strong>Option B:</strong> One from List B (e.g., driver's license or state ID) <em>and</em> one from List C (e.g., Social Security card or birth certificate).<br>Documents must be originals, not copies.</span>
+          <div class="col-label col-blue">Photo ID (List B)</div>
+          <div class="col-item">&#8226; Driver's License</div>
+          <div class="col-item">&#8226; State ID Card</div>
+          <div class="col-item">&#8226; School ID (with photo)</div>
         </div>
-      </li>
-      <li>
-        <div class="icon" style="background:#E3F2FD;">&#129703;</div>
         <div>
-          <strong>Photo ID</strong>
-          <span class="detail">A government-issued photo ID such as a driver's license or passport.</span>
+          <div class="col-label col-orange">Work Authorization (List C)</div>
+          <div class="col-item">&#8226; Social Security Card</div>
+          <div class="col-item">&#8226; Birth Certificate (with seal)</div>
         </div>
-      </li>
+      </div>
+    </div>
+
+    <div class="i9-note">
+      <span style="font-size:1.2rem;flex-shrink:0;">&#9888;&#65039;</span>
+      <span>Documents must be originals. We cannot accept photocopies, photos, or expired documents.</span>
+    </div>
+
+    <!-- Other items to bring -->
+    <ul class="checklist" style="margin-top:28px">
       <li>
         <div class="icon" style="background:#FFF8E1;">&#9997;&#65039;</div>
         <div>
@@ -625,6 +921,41 @@
   <section class="section" id="orientation-day">
     <h2 class="section-title">What to Expect on Orientation Day</h2>
     <p class="section-subtitle">Here's a look at how your day will flow.</p>
+
+    <!-- Detail cards -->
+    <div class="detail-cards" style="margin-bottom:32px">
+      <div class="detail-card green">
+        <span class="d-icon">&#127869;&#65039;</span>
+        <div>
+          <div class="d-title">Food</div>
+          <p class="d-text">We provide breakfast and lunch on your first day of orientation. Bring your own if you prefer. A refrigerator and microwave are available.</p>
+        </div>
+      </div>
+      <div class="detail-card cyan">
+        <span class="d-icon">&#129509;</span>
+        <div>
+          <div class="d-title">Clothing</div>
+          <p class="d-text">Business casual. Rooms can be cool, so bring layers or a jacket. Comfortable shoes are recommended since you'll be moving between rooms.</p>
+        </div>
+      </div>
+      <div class="detail-card orange">
+        <span class="d-icon">&#9200;</span>
+        <div>
+          <div class="d-title">Timing</div>
+          <p class="d-text">Please arrive by 8:50 AM. Check in at the front desk and we'll show you where to go.</p>
+        </div>
+      </div>
+      <div class="detail-card purple">
+        <span class="d-icon">&#10052;&#65039;</span>
+        <div>
+          <div class="d-title">Weather Delays</div>
+          <p class="d-text">Your orientation location follows the local school district's weather delays and closings. We will also send you a text when we know if there is a delay or closing.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <h3 style="font-size:1.15rem; color:var(--blue); margin-bottom:18px;">Orientation Day Agenda</h3>
     <ul class="timeline">
       <li>
         <h4>Arrive by 8:50 AM</h4>
@@ -763,6 +1094,49 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ======== RESOURCES ======== -->
+  <section class="section" id="resources">
+    <h2 class="section-title">Resources &amp; Training</h2>
+    <p class="section-subtitle">Materials available after you receive your work email and login credentials.</p>
+
+    <div class="resource-list">
+      <div class="resource-item">
+        <div class="r-icon">&#128218;</div>
+        <div>
+          <div class="r-title">Orientation Presentations</div>
+          <div class="r-desc">Slides and materials from your orientation sessions</div>
+        </div>
+      </div>
+      <div class="resource-item">
+        <div class="r-icon">&#128150;</div>
+        <div>
+          <div class="r-title">Benefits Guide</div>
+          <div class="r-desc">Health insurance, retirement, PTO, and other benefits information</div>
+        </div>
+      </div>
+      <div class="resource-item">
+        <div class="r-icon">&#128214;</div>
+        <div>
+          <div class="r-title">Employee Reference Guide</div>
+          <div class="r-desc">Policies, procedures, and everything you need as a team member</div>
+        </div>
+      </div>
+      <div class="resource-item">
+        <div class="r-icon">&#127979;</div>
+        <div>
+          <div class="r-title">School &amp; Program Manuals</div>
+          <div class="r-desc">Site-specific handbooks and operating procedures</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="resource-note">
+      <strong>Once you have your work email,</strong> visit our <strong>New Hire Orientation</strong> SharePoint site for presentations, guides, and other resources. Your personal portal will include a direct link.
     </div>
   </section>
 
