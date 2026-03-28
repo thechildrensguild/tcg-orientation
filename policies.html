@@ -18,11 +18,16 @@
       --blue: #0047BB;
       --blue-light: #e8eefb;
       --orange: #F47721;
+      --orange-light: #FEF0E6;
       --yellow: #FFDD4F;
       --cyan: #00ACCD;
+      --cyan-light: #E0F7FA;
       --green: #2CB34A;
+      --green-light: #E8F5E9;
       --pink: #EE3780;
+      --pink-light: #FCE4EC;
       --purple: #953192;
+      --purple-light: #F3E5F5;
       --red-orange: #EF462A;
       --text: #222;
       --text-light: #555;
@@ -145,6 +150,25 @@
     .color-bar span { flex: 1; }
 
     /* ========================================
+       INTRO NOTE
+       ======================================== */
+    .intro-note {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 32px 20px 0;
+    }
+
+    .intro-note-inner {
+      background: var(--blue-light);
+      border-left: 4px solid var(--blue);
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      font-size: .95rem;
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    /* ========================================
        SECTIONS
        ======================================== */
     .section {
@@ -167,106 +191,100 @@
     }
 
     /* ========================================
-       CATEGORY CARDS
+       POLICY CARDS
        ======================================== */
-    .category-card {
+    .policy-card {
       background: var(--white);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 28px 24px;
-      margin-bottom: 24px;
-      border-top: 4px solid var(--blue);
-    }
-
-    .category-card.orange { border-top-color: var(--orange); }
-    .category-card.cyan { border-top-color: var(--cyan); }
-    .category-card.green { border-top-color: var(--green); }
-    .category-card.purple { border-top-color: var(--purple); }
-    .category-card.pink { border-top-color: var(--pink); }
-
-    .category-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      padding: 24px 24px 20px;
       margin-bottom: 20px;
+      border-left: 4px solid var(--blue);
+      transition: box-shadow .2s;
     }
 
-    .category-icon {
-      flex-shrink: 0;
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
+    .policy-card:hover {
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Section color variants */
+    .section-conduct .policy-card { border-left-color: var(--blue); }
+    .section-rights .policy-card { border-left-color: var(--orange); }
+    .section-privacy .policy-card { border-left-color: var(--purple); }
+    .section-children .policy-card { border-left-color: var(--pink); }
+    .section-employment .policy-card { border-left-color: var(--green); }
+
+    .policy-card-header {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      background: var(--blue-light);
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 10px;
     }
 
-    .category-card.orange .category-icon { background: #FEF0E6; }
-    .category-card.cyan .category-icon { background: #E0F7FA; }
-    .category-card.green .category-icon { background: #E8F5E9; }
-    .category-card.purple .category-icon { background: #F3E5F5; }
-    .category-card.pink .category-icon { background: #FCE4EC; }
-
-    .category-name {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 1.15rem;
-      color: var(--text);
-    }
-
-    /* ========================================
-       POLICY ITEMS
-       ======================================== */
-    .policy-list {
-      list-style: none;
-    }
-
-    .policy-item {
-      padding: 14px 0;
-      border-bottom: 1px solid #eef1f5;
-    }
-
-    .policy-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .policy-item:first-child {
-      padding-top: 0;
-    }
-
-    .policy-number {
+    .policy-badge {
+      flex-shrink: 0;
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
-      font-size: .78rem;
-      color: var(--blue);
+      font-size: .75rem;
       letter-spacing: .02em;
-      display: inline-block;
-      background: var(--blue-light);
-      padding: 2px 10px;
-      border-radius: 4px;
-      margin-bottom: 4px;
+      padding: 3px 10px;
+      border-radius: 50px;
+      white-space: nowrap;
     }
 
-    .category-card.orange .policy-number { color: var(--orange); background: #FEF0E6; }
-    .category-card.cyan .policy-number { color: var(--cyan); background: #E0F7FA; }
-    .category-card.green .policy-number { color: var(--green); background: #E8F5E9; }
-    .category-card.purple .policy-number { color: var(--purple); background: #F3E5F5; }
-    .category-card.pink .policy-number { color: var(--pink); background: #FCE4EC; }
+    /* Badge colors per section */
+    .section-conduct .policy-badge { color: var(--blue); background: var(--blue-light); }
+    .section-rights .policy-badge { color: var(--orange); background: var(--orange-light); }
+    .section-privacy .policy-badge { color: var(--purple); background: var(--purple-light); }
+    .section-children .policy-badge { color: var(--pink); background: var(--pink-light); }
+    .section-employment .policy-badge { color: var(--green); background: var(--green-light); }
 
-    .policy-name {
+    .policy-card-title {
+      font-family: 'Poppins', sans-serif;
       font-weight: 700;
-      font-size: .95rem;
+      font-size: 1.05rem;
       color: var(--text);
-      margin-bottom: 3px;
+      line-height: 1.35;
     }
 
-    .policy-desc {
-      font-size: .9rem;
+    .policy-card-body {
+      font-size: .93rem;
       color: var(--text-light);
-      line-height: 1.55;
+      line-height: 1.7;
+    }
+
+    .policy-card-body p {
+      margin-bottom: 8px;
+    }
+
+    .policy-card-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Section icons */
+    .section-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      margin-right: 10px;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+
+    .section-conduct .section-icon { background: var(--blue-light); }
+    .section-rights .section-icon { background: var(--orange-light); }
+    .section-privacy .section-icon { background: var(--purple-light); }
+    .section-children .section-icon { background: var(--pink-light); }
+    .section-employment .section-icon { background: var(--green-light); }
+
+    .section-title-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
     }
 
     /* ========================================
@@ -398,6 +416,7 @@
       .section { padding: 56px 28px; }
       .section-title { font-size: 1.65rem; }
       .contact-links { flex-direction: row; justify-content: center; }
+      .intro-note { padding: 40px 28px 0; }
     }
 
     @media (min-width: 900px) {
@@ -413,11 +432,11 @@
     <div class="nav-inner">
       <span class="nav-brand">TCG</span>
       <a href="index.html" class="nav-link">&#8592; Back to Welcome Page</a>
-      <a href="#workplace" class="nav-link">Workplace</a>
-      <a href="#safety" class="nav-link">Safety</a>
-      <a href="#employment" class="nav-link">Employment</a>
+      <a href="#conduct" class="nav-link">Conduct</a>
+      <a href="#rights" class="nav-link">Rights</a>
       <a href="#privacy" class="nav-link">Privacy</a>
-      <a href="#organizational" class="nav-link">Organizational</a>
+      <a href="#children" class="nav-link">Children &amp; Families</a>
+      <a href="#employment" class="nav-link">Employment</a>
       <a href="#contact" class="nav-link">Contact</a>
     </div>
   </nav>
@@ -426,7 +445,7 @@
   <header class="hero">
     <div class="hero-badge">New Hire Orientation</div>
     <h1>Key Policies for New Team Members</h1>
-    <p>The following are summaries of key organizational policies. Full policy documents are available on the TCG intranet after you receive your work credentials.</p>
+    <p>Understanding these policies helps you do your best work and supports the children and families we serve.</p>
   </header>
   <div class="color-bar">
     <span style="background:#0047BB"></span>
@@ -439,225 +458,316 @@
     <span style="background:#EF462A"></span>
   </div>
 
-  <!-- ======== WORKPLACE ESSENTIALS ======== -->
-  <section class="section" id="workplace">
-    <h2 class="section-title">Workplace Essentials</h2>
-    <p class="section-subtitle">Core policies that shape our day-to-day work environment.</p>
+  <!-- ======== INTRO NOTE ======== -->
+  <div class="intro-note">
+    <div class="intro-note-inner">
+      The following are summaries of key policies reviewed during your orientation. These summaries are provided for your reference &mdash; the full policy documents are available on the TCG intranet after you receive your work credentials.
+    </div>
+  </div>
 
-    <div class="category-card">
-      <div class="category-header">
-        <div class="category-icon">&#128188;</div>
-        <div class="category-name">Workplace Essentials</div>
+  <!-- ================================================================
+       SECTION 1: WORKPLACE CULTURE & CONDUCT
+       ================================================================ -->
+  <section class="section section-conduct" id="conduct">
+    <div class="section-title-row">
+      <div class="section-icon">&#128188;</div>
+      <h2 class="section-title">Workplace Culture &amp; Conduct</h2>
+    </div>
+    <p class="section-subtitle">Standards and expectations that shape our professional environment.</p>
+
+    <!-- 1. Appearance Policy -->
+    <div class="policy-card">
+      <div class="policy-card-header">
+        <span class="policy-badge">02-01-01</span>
+        <div class="policy-card-title">Appearance Policy</div>
       </div>
-      <ul class="policy-list">
-        <li class="policy-item">
-          <span class="policy-number">02-01-01</span>
-          <div class="policy-name">Appearance for Administration &amp; Campus-Based Staff</div>
-          <div class="policy-desc">Dress code and professional appearance expectations.</div>
-        </li>
-        <li class="policy-item">
-          <span class="policy-number">02-04-01</span>
-          <div class="policy-name">Drug and Smoke Free Workplace</div>
-          <div class="policy-desc">TCG maintains a drug and smoke-free environment at all locations.</div>
-        </li>
-        <li class="policy-item">
-          <span class="policy-number">02-08-05</span>
-          <div class="policy-name">Equal Employment Opportunity (EEO)</div>
-          <div class="policy-desc">TCG is committed to equal opportunity in all employment practices.</div>
-        </li>
-        <li class="policy-item">
-          <span class="policy-number">02-08-24</span>
-          <div class="policy-name">Discrimination and Harassment</div>
-          <div class="policy-desc">Zero tolerance policy; how to report concerns.</div>
-        </li>
-        <li class="policy-item">
-          <span class="policy-number">02-08-45</span>
-          <div class="policy-name">Requesting Reasonable Accommodation</div>
-          <div class="policy-desc">How to request workplace accommodations.</div>
-        </li>
-        <li class="policy-item">
-          <span class="policy-number">03-11-03</span>
-          <div class="policy-name">Ethical Practices, Code of Conduct</div>
-          <div class="policy-desc">Standards of professional behavior expected of all team members.</div>
-        </li>
-        <li class="policy-item">
-          <span class="policy-number">03-11-03b</span>
-          <div class="policy-name">Boundaries for Employees</div>
-          <div class="policy-desc">Professional boundaries when working with children and families.</div>
-        </li>
-      </ul>
+      <div class="policy-card-body">
+        <p>The Children's Guild has a business casual dress code. Team members should present themselves professionally and appropriately for their work environment. Specific guidelines may vary by program &mdash; school-based staff should dress in a way that is professional and safe for working with students. Avoid clothing with offensive graphics or language. When in doubt, ask your team leader about site-specific expectations.</p>
+      </div>
+    </div>
+
+    <!-- 2. Drug and Smoke Free Workplace -->
+    <div class="policy-card">
+      <div class="policy-card-header">
+        <span class="policy-badge">02-04-01</span>
+        <div class="policy-card-title">Drug and Smoke Free Workplace</div>
+      </div>
+      <div class="policy-card-body">
+        <p>TCG maintains a completely drug-free, smoke-free, and alcohol-free workplace. This includes all TCG facilities, vehicles, grounds, and within a one-block radius of any facility. Smoking, vaping, and smokeless tobacco are all prohibited. Team members may not be under the influence of any dangerous substance while at work.</p>
+        <p>Pre-employment drug screening is required, and testing may occur for cause, after accidents, or randomly. Prescription medications that may affect job performance must be reported to your supervisor. Violation of this policy may result in discipline up to and including termination.</p>
+      </div>
+    </div>
+
+    <!-- 14. Ethical Practices and Code of Conduct -->
+    <div class="policy-card">
+      <div class="policy-card-header">
+        <span class="policy-badge">03-11-03</span>
+        <div class="policy-card-title">Ethical Practices and Code of Conduct</div>
+      </div>
+      <div class="policy-card-body">
+        <p>TCG subscribes to the highest standards of professional and ethical conduct. All team members are expected to practice with integrity, treat students and families with dignity, and maintain appropriate professional relationships. The code of conduct covers areas including conflicts of interest, cultural competence, informed consent, and appropriate boundaries.</p>
+        <p>Each professional is also expected to follow the code of ethics established for their specific discipline (social work, education, counseling, etc.). The welfare of the persons we serve is always paramount.</p>
+      </div>
+    </div>
+
+    <!-- 13. Intellectual Property -->
+    <div class="policy-card">
+      <div class="policy-card-header">
+        <span class="policy-badge">03-10-05</span>
+        <div class="policy-card-title">Intellectual Property</div>
+      </div>
+      <div class="policy-card-body">
+        <p>Materials, content, and work products created during your employment at TCG are the property of the organization. This includes curriculum, training materials, presentations, and any other work created using TCG resources. The use of copyrighted material without permission is prohibited. Plagiarism in any form will result in disciplinary action.</p>
+      </div>
+    </div>
+
+    <!-- 12. Social Media -->
+    <div class="policy-card">
+      <div class="policy-card-header">
+        <span class="policy-badge">03-10-03b</span>
+        <div class="policy-card-title">Social Media</div>
+      </div>
+      <div class="policy-card-body">
+        <p>Team members should use social media responsibly. You may not create social media accounts representing TCG or its programs. Do not post confidential information, student photos, or anything that could identify the children and families we serve. Be aware that content you post publicly may reflect on the organization.</p>
+        <p>If you see negative or inappropriate content about TCG online, do not engage &mdash; report it to <a href="mailto:marketing@childrensguild.org">marketing@childrensguild.org</a>. Access to TCG's official social media accounts is managed by the Marketing Department.</p>
+      </div>
     </div>
   </section>
 
   <hr class="divider">
 
-  <!-- ======== SAFETY & EMERGENCY ======== -->
-  <section class="section" id="safety">
-    <h2 class="section-title">Safety &amp; Emergency</h2>
-    <p class="section-subtitle">Know how to stay safe and what to do in an emergency.</p>
+  <!-- ================================================================
+       SECTION 2: YOUR RIGHTS & PROTECTIONS
+       ================================================================ -->
+  <section class="section section-rights" id="rights">
+    <div class="section-title-row">
+      <div class="section-icon">&#128737;</div>
+      <h2 class="section-title">Your Rights &amp; Protections</h2>
+    </div>
+    <p class="section-subtitle">Policies that protect you and ensure a fair, safe workplace.</p>
 
-    <div class="category-card orange">
-      <div class="category-header">
-        <div class="category-icon">&#9888;&#65039;</div>
-        <div class="category-name">Safety &amp; Emergency</div>
+    <!-- 5. Discrimination and Harassment -->
+    <div class="policy-card">
+      <div class="policy-card-header">
+        <span class="policy-badge">02-08-24</span>
+        <div class="policy-card-title">Discrimination and Harassment</div>
       </div>
-      <ul class="policy-list">
-        <li class="policy-item">
-          <span class="policy-number">01-01-01</span>
-          <div class="policy-name">Safety</div>
-          <div class="policy-desc">General workplace safety requirements.</div>
-        </li>
-        <li class="policy-item">
-          <span class="policy-number">01-02-01</span>
-          <div class="policy-name">Emergency Health Safety Response</div>
-          <div class="policy-desc">What to do in a health or safety emergency.</div>
-        </li>
-        <li class="policy-item">
-          <span class="policy-number">01-02-01B</span>
-          <div class="policy-name">Safety &amp; Accidents (Employees)</div>
-          <div class="policy-desc">Reporting procedures if you are injured at work.</div>
-        </li>
-        <li class="policy-item">
-          <span class="policy-number">04-14-01</span>
-          <div class="policy-name">Vehicle Use, Transportation, and Safety</div>
-          <div class="policy-desc">Rules for using vehicles for work purposes.</div>
-        </li>
-      </ul>
+      <div class="policy-card-body">
+        <p>TCG is committed to a workplace free from discrimination and harassment of any kind. This includes discrimination based on race, color, religion, national origin, sex, sexual orientation, gender identity, age, disability, marital status, or any other protected characteristic. Sexual harassment &mdash; including unwelcome advances, requests for favors, and hostile work environment &mdash; is strictly prohibited.</p>
+        <p>If you experience or witness discrimination or harassment, report it immediately to Human Resources or through the TCG Cares Line (888-576-5441 or <a href="https://www.mycompliancereport.com" target="_blank" rel="noopener">MyComplianceReport.com</a>). TCG will investigate all complaints promptly and confidentially. Retaliation against anyone who reports a concern in good faith is prohibited.</p>
+      </div>
+    </div>
+
+    <!-- 7. Requesting Reasonable Accommodation -->
+    <div class="policy-card">
+      <div class="policy-card-header">
+        <span class="policy-badge">02-08-45</span>
+        <div class="policy-card-title">Requesting Reasonable Accommodation</div>
+      </div>
+      <div class="policy-card-body">
+        <p>TCG is committed to providing reasonable accommodations for team members with disabilities, in compliance with the Americans with Disabilities Act (ADA). If you need an accommodation, contact Human Resources. TCG has partnered with Sun Life to assist with the accommodation process. After you submit a request, Sun Life will provide you with forms to document your needs.</p>
+        <p>Human Resources will engage in an interactive process to assess and address your request. All communications regarding accommodations are kept confidential, and TCG will not retaliate against anyone who requests an accommodation. Lactation accommodation is also available &mdash; speak with your supervisor or HR if you need break time and a private space.</p>
+      </div>
+    </div>
+
+    <!-- 8. Employee Protection - Whistleblower -->
+    <div class="policy-card">
+      <div class="policy-card-header">
+        <span class="policy-badge">02-09-05</span>
+        <div class="policy-card-title">Employee Protection &mdash; Whistleblower</div>
+      </div>
+      <div class="policy-card-body">
+        <p>If you reasonably believe that any TCG policy, practice, or activity violates the law, you are encouraged to report it through the TCG Cares Line. TCG will not retaliate against any team member who makes a good-faith report. You are protected when you report concerns to a supervisor, Human Resources, or through the anonymous reporting system.</p>
+        <p>However, intentionally filing a false report is a policy violation. The TCG Cares Line can be reached at 888-576-5441 or online at <a href="https://www.mycompliancereport.com" target="_blank" rel="noopener">MyComplianceReport.com</a>.</p>
+      </div>
+    </div>
+
+    <!-- 3. Release of Employee Information -->
+    <div class="policy-card">
+      <div class="policy-card-header">
+        <span class="policy-badge">02-05-01</span>
+        <div class="policy-card-title">Release of Employee Information</div>
+      </div>
+      <div class="policy-card-body">
+        <p>TCG protects employee information. Requests for employee information must be made in writing through <a href="mailto:voe@childrensguild.org">voe@childrensguild.org</a>. Verification of employment will only include position title and dates of employment unless financial information is needed for a loan.</p>
+        <p>Employees are not permitted to write professional references for current or former team members on behalf of TCG. Personal references may be given but not on TCG letterhead.</p>
+      </div>
+    </div>
+
+    <!-- 4. Staff Travel and Reimbursement -->
+    <div class="policy-card">
+      <div class="policy-card-header">
+        <span class="policy-badge">02-07-03</span>
+        <div class="policy-card-title">Staff Travel and Reimbursement</div>
+      </div>
+      <div class="policy-card-body">
+        <p>Team members who travel for TCG business may be eligible for reimbursement of approved expenses. All travel must be pre-approved by your supervisor. Mileage reimbursement for use of personal vehicles follows IRS standard rates. Keep all receipts and submit reimbursement requests promptly through the established process.</p>
+      </div>
     </div>
   </section>
 
   <hr class="divider">
 
-  <!-- ======== YOUR EMPLOYMENT ======== -->
-  <section class="section" id="employment">
-    <h2 class="section-title">Your Employment</h2>
-    <p class="section-subtitle">Policies related to your role, performance, and protections.</p>
+  <!-- ================================================================
+       SECTION 3: PRIVACY & CONFIDENTIALITY
+       ================================================================ -->
+  <section class="section section-privacy" id="privacy">
+    <div class="section-title-row">
+      <div class="section-icon">&#128274;</div>
+      <h2 class="section-title">Privacy &amp; Confidentiality</h2>
+    </div>
+    <p class="section-subtitle">How we protect the information of the people we serve and work with.</p>
 
-    <div class="category-card cyan">
-      <div class="category-header">
-        <div class="category-icon">&#128203;</div>
-        <div class="category-name">Your Employment</div>
+    <!-- 9. Confidentiality -->
+    <div class="policy-card">
+      <div class="policy-card-header">
+        <span class="policy-badge">03-03-01</span>
+        <div class="policy-card-title">Confidentiality</div>
       </div>
-      <ul class="policy-list">
-        <li class="policy-item">
-          <span class="policy-number">02-08-03</span>
-          <div class="policy-name">Recruitment and Interview</div>
-          <div class="policy-desc">Hiring practices and procedures.</div>
-        </li>
-        <li class="policy-item">
-          <span class="policy-number">02-08-07</span>
-          <div class="policy-name">Criminal History Record Information</div>
-          <div class="policy-desc">Background check requirements.</div>
-        </li>
-        <li class="policy-item">
-          <span class="policy-number">02-08-34</span>
-          <div class="policy-name">Personal Property in the Workplace</div>
-          <div class="policy-desc">Guidelines for personal items at work.</div>
-        </li>
-        <li class="policy-item">
-          <span class="policy-number">02-08-44</span>
-          <div class="policy-name">Performance Reviews</div>
-          <div class="policy-desc">How and when performance is evaluated.</div>
-        </li>
-        <li class="policy-item">
-          <span class="policy-number">02-09-05</span>
-          <div class="policy-name">Employee Protection (Whistleblower)</div>
-          <div class="policy-desc">Protections for reporting concerns in good faith.</div>
-        </li>
-        <li class="policy-item">
-          <span class="policy-number">02-10-01</span>
-          <div class="policy-name">Family &amp; Medical Leave</div>
-          <div class="policy-desc">Your rights under FMLA.</div>
-        </li>
-        <li class="policy-item">
-          <span class="policy-number">02-08-02</span>
-          <div class="policy-name">Worker's Compensation Coverage</div>
-          <div class="policy-desc">What to do if you're injured on the job.</div>
-        </li>
-      </ul>
+      <div class="policy-card-body">
+        <p>Protecting the privacy of the children and families we serve is one of our most important responsibilities. All student records, personal information, and family details are strictly confidential. You may not disclose any personally identifiable information about a student without proper written authorization.</p>
+        <p>All team members sign a Confidentiality Agreement before they begin work. This applies to everything from casual conversations to formal communications &mdash; never discuss student information in public areas, on social media, or with anyone who does not have a legitimate need to know. Violations of confidentiality may result in discipline up to and including termination.</p>
+      </div>
+    </div>
+
+    <!-- 10. Privacy Practices -->
+    <div class="policy-card">
+      <div class="policy-card-header">
+        <span class="policy-badge">03-03-02</span>
+        <div class="policy-card-title">Privacy Practices</div>
+      </div>
+      <div class="policy-card-body">
+        <p>TCG follows HIPAA guidelines to protect health information. All medical, behavioral health, and personally identifiable information about students and families must be handled in accordance with federal and state privacy laws. This includes how we store, share, and dispose of records.</p>
+        <p>If you handle any protected health information in your role, you will receive specific training on privacy requirements.</p>
+      </div>
+    </div>
+
+    <!-- 11. Media and Public Relations -->
+    <div class="policy-card">
+      <div class="policy-card-header">
+        <span class="policy-badge">03-10-03</span>
+        <div class="policy-card-title">Media and Public Relations</div>
+      </div>
+      <div class="policy-card-body">
+        <p>The President and CEO is the official spokesperson for TCG. If you are contacted by the media, refer all inquiries to <a href="mailto:marketing@childrensguild.org">marketing@childrensguild.org</a>. Do not speak to the media on behalf of the organization without authorization. In an emergency, only the designated spokesperson may release information.</p>
+        <p>Student publicity requires a signed consent form from parents/guardians. Photographs or recordings of students for any external use require specific permission &mdash; internal security cameras are the exception.</p>
+      </div>
     </div>
   </section>
 
   <hr class="divider">
 
-  <!-- ======== PRIVACY & TECHNOLOGY ======== -->
-  <section class="section" id="privacy">
-    <h2 class="section-title">Privacy &amp; Technology</h2>
-    <p class="section-subtitle">How we protect information and use technology responsibly.</p>
+  <!-- ================================================================
+       SECTION 4: WORKING WITH CHILDREN & FAMILIES
+       ================================================================ -->
+  <section class="section section-children" id="children">
+    <div class="section-title-row">
+      <div class="section-icon">&#128106;</div>
+      <h2 class="section-title">Working with Children &amp; Families</h2>
+    </div>
+    <p class="section-subtitle">Critical policies for anyone who works with the young people and families we serve.</p>
 
-    <div class="category-card purple">
-      <div class="category-header">
-        <div class="category-icon">&#128274;</div>
-        <div class="category-name">Privacy &amp; Technology</div>
+    <!-- 15. Employee Boundaries -->
+    <div class="policy-card">
+      <div class="policy-card-header">
+        <span class="policy-badge">03-11-03b</span>
+        <div class="policy-card-title">Employee Boundaries</div>
       </div>
-      <ul class="policy-list">
-        <li class="policy-item">
-          <span class="policy-number">03-03-01</span>
-          <div class="policy-name">Confidentiality</div>
-          <div class="policy-desc">Protecting confidential information about children, families, and the organization.</div>
-        </li>
-        <li class="policy-item">
-          <span class="policy-number">03-03-02</span>
-          <div class="policy-name">Privacy Practices</div>
-          <div class="policy-desc">HIPAA and privacy requirements.</div>
-        </li>
-        <li class="policy-item">
-          <span class="policy-number">03-07-01</span>
-          <div class="policy-name">Electronic Communication &amp; Information Technology Systems</div>
-          <div class="policy-desc">Acceptable use of email, internet, and devices.</div>
-        </li>
-        <li class="policy-item">
-          <span class="policy-number">03-10-03b</span>
-          <div class="policy-name">Social Media Relations</div>
-          <div class="policy-desc">Guidelines for social media use.</div>
-        </li>
-        <li class="policy-item">
-          <span class="policy-number">12-02-02</span>
-          <div class="policy-name">FERPA Electronic Communication &amp; Data Privacy</div>
-          <div class="policy-desc">Student data privacy requirements.</div>
-        </li>
-      </ul>
+      <div class="policy-card-body">
+        <p>Maintaining professional boundaries with the children and families we serve is critical. Personal relationships between team members and students are strictly prohibited. This means no personal phone calls, texting, social media contact, home visits without approval, lending money, or any contact outside of professional responsibilities. You may not take photos of students on personal devices.</p>
+        <p>These boundaries exist because of the power imbalance inherent in staff-youth relationships. All team members, including contractors, interns, and volunteers, must follow these standards. Violations will be investigated and may result in termination. If you are unsure whether an interaction is appropriate, ask your supervisor or HR.</p>
+      </div>
+    </div>
+
+    <!-- 16. Child Abuse and Neglect -->
+    <div class="policy-card">
+      <div class="policy-card-header">
+        <span class="policy-badge">03-11-04</span>
+        <div class="policy-card-title">Child Abuse and Neglect</div>
+      </div>
+      <div class="policy-card-body">
+        <p>As a team member at a child-serving organization, you are a mandatory reporter. If you suspect that a child is being abused or neglected, you must report it immediately &mdash; first to your Program Director, then to Child Protective Services (CPS) in Maryland or the Child and Family Services Agency (CFSA) in DC. A written report must follow within 48 hours (Maryland) or 24 hours (DC).</p>
+        <p>You do not need to prove abuse has occurred &mdash; you only need reasonable suspicion. All reports are confidential. TCG conducts background checks on all team members and will not employ anyone with a conviction for child sexual abuse. Failure to report suspected abuse may result in legal consequences and termination.</p>
+      </div>
+    </div>
+
+    <!-- 17. Consent for Publicity -->
+    <div class="policy-card">
+      <div class="policy-card-header">
+        <span class="policy-badge">Consent</span>
+        <div class="policy-card-title">Consent for Publicity</div>
+      </div>
+      <div class="policy-card-body">
+        <p>Before any student can appear in photos, videos, or other media representing TCG, their parent or guardian must sign a Consent for Student Publicity form. This applies to social media posts, newsletters, presentations, and any external communications. Even with consent on file, each specific event or publication may require additional permission. Never photograph or record students on your personal device.</p>
+      </div>
     </div>
   </section>
 
   <hr class="divider">
 
-  <!-- ======== ORGANIZATIONAL ======== -->
-  <section class="section" id="organizational">
-    <h2 class="section-title">Organizational</h2>
-    <p class="section-subtitle">Policies that support TCG's mission and operations.</p>
+  <!-- ================================================================
+       SECTION 5: YOUR EMPLOYMENT
+       ================================================================ -->
+  <section class="section section-employment" id="employment">
+    <div class="section-title-row">
+      <div class="section-icon">&#128203;</div>
+      <h2 class="section-title">Your Employment</h2>
+    </div>
+    <p class="section-subtitle">Policies about performance, benefits, and your personnel records.</p>
 
-    <div class="category-card green">
-      <div class="category-header">
-        <div class="category-icon">&#127970;</div>
-        <div class="category-name">Organizational</div>
+    <!-- 6. Performance Reviews -->
+    <div class="policy-card">
+      <div class="policy-card-header">
+        <span class="policy-badge">02-08-44</span>
+        <div class="policy-card-title">Performance Reviews</div>
       </div>
-      <ul class="policy-list">
-        <li class="policy-item">
-          <span class="policy-number">03-10-03</span>
-          <div class="policy-name">Public Relations</div>
-          <div class="policy-desc">Media and communications guidelines.</div>
-        </li>
-        <li class="policy-item">
-          <span class="policy-number">03-10-05</span>
-          <div class="policy-name">Intellectual Property</div>
-          <div class="policy-desc">Ownership of work created at TCG.</div>
-        </li>
-        <li class="policy-item">
-          <span class="policy-number">03-10-26</span>
-          <div class="policy-name">Organizational Training</div>
-          <div class="policy-desc">Required training expectations.</div>
-        </li>
-        <li class="policy-item">
-          <span class="policy-number">12-01-03</span>
-          <div class="policy-name">Accessibility</div>
-          <div class="policy-desc">Commitment to accessibility for all.</div>
-        </li>
-      </ul>
+      <div class="policy-card-body">
+        <p>All team members receive performance evaluations to support growth and development. New team members receive a six-month evaluation at the end of their first 180 days. After that, evaluations are conducted annually.</p>
+        <p>You are evaluated on five core competencies: Attitude Towards Work, Job Knowledge, Initiative, Commitment, and Teamwork. Supervisors and managers are also evaluated on Leadership and Management. Performance ratings use a three-point scale: Not Meeting Expectations, Meeting Expectations, and Exceeds Expectations. Evaluations are focused on feedback and coaching and are completed through Paycom.</p>
+      </div>
     </div>
 
-    <div class="info-note" style="margin-top:28px">
-      <strong>Full policy documents are available on the TCG intranet.</strong> You will have access after receiving your work email and login credentials.
+    <!-- 20. Employee Benefit PTO Leave -->
+    <div class="policy-card">
+      <div class="policy-card-header">
+        <span class="policy-badge">20-08-21</span>
+        <div class="policy-card-title">Employee Benefit PTO Leave</div>
+      </div>
+      <div class="policy-card-body">
+        <p>Full-time team members (30+ hours/week) earn Paid Time Off (PTO) that covers vacation, personal, and sick time. PTO accrual rates increase with years of service. All leave must be pre-approved by your supervisor. School staff must request leave at least 7 days in advance. You can carry over PTO year to year up to a maximum of 480 hours.</p>
+        <p>Every full-time team member also receives one 8-hour Mental Health Day at hire, which can be used without advance notice. TCG also complies with the Maryland Healthy Working Families Act for Sick and Safe Leave.</p>
+      </div>
+    </div>
+
+    <!-- 19. HR Employee Personal Information -->
+    <div class="policy-card">
+      <div class="policy-card-header">
+        <span class="policy-badge">HR Info</span>
+        <div class="policy-card-title">HR Employee Personal Information</div>
+      </div>
+      <div class="policy-card-body">
+        <p>TCG maintains personnel records for all team members. It is your responsibility to keep your personal information current in Paycom, including your address, phone number, emergency contacts, and tax withholding. Your personnel file is confidential and maintained in accordance with federal and state laws. You have the right to review your own personnel file at any time.</p>
+      </div>
+    </div>
+
+    <!-- 18. Employee Reference Guide Acknowledgement -->
+    <div class="policy-card">
+      <div class="policy-card-header">
+        <span class="policy-badge">ERG</span>
+        <div class="policy-card-title">Employee Reference Guide Acknowledgement</div>
+      </div>
+      <div class="policy-card-body">
+        <p>During orientation, you will acknowledge receipt of the Employee Reference Guide, which contains detailed information about TCG policies, procedures, benefits, and expectations. This acknowledgement confirms that you have received the guide and understand your responsibility to review and follow its contents.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ======== FINAL NOTE ======== -->
+  <section class="section">
+    <div class="info-note">
+      <strong>Questions about any of these policies?</strong> Contact Human Resources at <a href="mailto:employeerelations@childrensguild.org">employeerelations@childrensguild.org</a> or reach out to Elizabeth Garcia.
     </div>
   </section>
 
