@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<title>Setting Up Your Work Email — The Children's Guild</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Mulish:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#0047BB; --orange:#F47721; --yellow:#FFDD4F; --purple:#953192;
+    --cyan:#00ACCD; --green:#2CB34A; --pink:#EE3780; --redorange:#EF462A;
+    --ink:#2b2b33; --muted:#5d6470; --line:#e6e8ee;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#fff;color:var(--ink);
+       font-family:'Mulish',Tahoma,sans-serif;font-size:17px;line-height:1.6}
+  .stripe{display:flex;height:10px}
+  .stripe span{flex:1}
+  .wrap{max-width:860px;margin:0 auto;padding:0 20px 64px}
+  header{padding:28px 0 8px}
+  .logo{height:54px;width:auto;display:block}
+  h1{font-family:'Poppins',"Franklin Gothic Heavy",sans-serif;font-weight:700;
+     color:var(--blue);font-size:clamp(28px,5vw,40px);line-height:1.15;margin:22px 0 6px}
+  .lede{font-size:19px;color:var(--muted);margin:0 0 8px}
+  h2{font-family:'Mulish',Tahoma,sans-serif;font-weight:700;text-transform:uppercase;
+     letter-spacing:.06em;font-size:15px;margin:40px 0 14px;display:flex;align-items:center;gap:10px}
+  h2 .dot{width:14px;height:14px;border-radius:50%;flex:none}
+  .apps{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .app{border:2px solid var(--purple);border-radius:14px;padding:18px}
+  .app b{display:block;font-family:'Poppins',sans-serif;color:var(--purple);font-size:18px;margin-bottom:6px}
+  .app p{margin:0;font-size:15px;color:var(--muted)}
+  .steps{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .step{border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .step .head{padding:12px 18px;color:#fff;font-family:'Poppins',sans-serif;font-size:17px}
+  .step .body{padding:6px 18px 18px}
+  .step ol{margin:0;padding-left:0;list-style:none;counter-reset:s}
+  .step li{counter-increment:s;position:relative;padding:12px 0 12px 42px;border-bottom:1px solid var(--line);font-size:16px}
+  .step li:last-child{border-bottom:0}
+  .step li::before{content:counter(s);position:absolute;left:0;top:11px;width:28px;height:28px;
+     border-radius:50%;color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+  .laptop .head{background:var(--blue)} .laptop li::before{background:var(--blue)}
+  .phone .head{background:var(--orange)} .phone li::before{background:var(--orange)}
+  .tag{display:inline-block;background:rgba(255,255,255,.28);border-radius:20px;padding:1px 10px;font-size:12px;
+       letter-spacing:.08em;text-transform:uppercase;margin-left:8px;vertical-align:2px}
+  .note{border-left:6px solid var(--yellow);background:#fffdf2;border-radius:0 12px 12px 0;padding:16px 20px;margin:22px 0}
+  .note.help{border-left-color:var(--cyan);background:#f2fbfd}
+  .note b{font-family:'Poppins',sans-serif;display:block;margin-bottom:4px;font-size:16px}
+  .note.help b{color:var(--cyan)} .note b{color:var(--orange)}
+  .contact{margin:8px 0 0;font-size:16px}
+  .contact a{color:var(--blue);font-weight:600}
+  .value{display:flex;align-items:center;gap:16px;margin:36px 0 0;padding:18px 20px;
+         border:1px solid var(--line);border-radius:14px}
+  .value img{width:74px;height:74px;flex:none}
+  .value p{margin:0;font-size:16px;color:var(--muted)}
+  footer{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);
+         display:flex;align-items:center;gap:12px;color:var(--muted);font-size:14px}
+  footer img{height:34px}
+  @media(max-width:680px){
+    .apps,.steps{grid-template-columns:1fr}
+    body{font-size:16px}
+  }
+</style>
+</head>
+<body>
+<div class="stripe">
+  <span style="background:#0047BB"></span><span style="background:#953192"></span>
+  <span style="background:#EF462A"></span><span style="background:#F47721"></span>
+  <span style="background:#FFDD4F"></span><span style="background:#2CB34A"></span>
+  <span style="background:#00ACCD"></span>
+</div>
+
+<div class="wrap">
+  <header><img class="logo" src="assets/tcg-logo.png" alt="The Children's Guild"></header>
+
+  <h1>Setting up your work email</h1>
+  <p class="lede">Two apps, two short steps. Most people finish in about fifteen minutes.</p>
+
+  <h2><span class="dot" style="background:var(--purple)"></span>First, download these two apps</h2>
+  <div class="apps">
+    <div class="app">
+      <b>Microsoft Outlook</b>
+      <p>Your work email. You'll use it every day to send and receive messages.</p>
+    </div>
+    <div class="app">
+      <b>Microsoft Authenticator</b>
+      <p>Keeps your account secure. You'll use it to confirm it's really you when you sign in.</p>
+    </div>
+  </div>
+  <p style="font-size:15px;color:var(--muted);margin-top:10px">Both are free in the App&nbsp;Store (iPhone) or Google&nbsp;Play (Android).</p>
+
+  <h2><span class="dot" style="background:var(--blue)"></span>Then follow these in order</h2>
+  <div class="steps">
+    <div class="step laptop">
+      <div class="head">On a laptop <span class="tag">Start here</span></div>
+      <div class="body">
+        <ol>
+          <li>Go to <b>portal.office.com</b> in a web browser.</li>
+          <li>Sign in with your work email address and the temporary password from DP&nbsp;Solutions.</li>
+          <li>Create a new password. Pick something strong you'll remember.</li>
+          <li>Set up multi-factor authentication. Open <b>Microsoft Authenticator</b> on your phone and scan the QR code on the laptop screen.</li>
+          <li>That's it—you're in. Have a look around your inbox.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="step phone">
+      <div class="head">On your phone</div>
+      <div class="body">
+        <ol>
+          <li>Open the <b>Microsoft Outlook</b> app.</li>
+          <li>Tap <b>Add Account</b> and enter your work email address.</li>
+          <li>Enter the new password you just created.</li>
+          <li>When prompted, open <b>Microsoft Authenticator</b> and approve the sign-in.</li>
+          <li>Done. Your work email is on your phone.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>Why start on a laptop?</b>
+    Changing your password and setting up authentication go more smoothly on a laptop. If you try both on your phone, the prompts appear on the same screen you're working from, which gets confusing. Start on the laptop, then add your phone.
+  </div>
+
+  <div class="note help">
+    <b>Stuck at any step?</b>
+    <p class="contact">DP&nbsp;Solutions is our IT team—they set up your account and can help with any of this.<br>
+      <a href="tel:4107201220">410.720.1220</a> &nbsp;·&nbsp; <a href="mailto:service@childrensguild.org">service@childrensguild.org</a></p>
+    <p class="contact">Your team leader can also reach Learning &amp; Development at
+      <a href="tel:4438296155">443.829.6155</a> or <a href="mailto:garciae@childrensguild.org">garciae@childrensguild.org</a>.</p>
+  </div>
+
+  <div class="value">
+    <img src="assets/value-you-belong-here.png" alt="You Belong Here">
+    <p>Getting set up is the first small step. If anything here is unclear, ask—we would rather help than have you guess.</p>
+  </div>
+
+  <footer>
+    <img src="assets/skippy.png" alt="">
+    <span>The Children's Guild — Learning &amp; Development</span>
+  </footer>
+</div>
+</body>
+</html>
